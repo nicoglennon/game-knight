@@ -26,10 +26,12 @@ end
 
 10.times { Mechanism.create(name: Faker::Food.spice) }
 
-10.times do
-  GameMechanism.create(game_id: Game.all.sample.id, mechanism_id: Mechanism.all.sample.id)
-end
+ p GameMechanism.new
 
-10.times do
-  GameCategory.create(game_id: Game.all.sample.id, category_id: Category.all.sample.id)
-end
+# 10.times do
+#   GameMechanism.create(game_id: Game.all.sample.id, mechanism_id: Mechanism.all.sample.id)
+# end
+
+# 10.times do
+#   GameCategory.create(game_id: Game.all.sample.id, category_id: Category.all.sample.id)
+# end
