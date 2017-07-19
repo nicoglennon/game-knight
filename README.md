@@ -1,6 +1,6 @@
 # Game Knight
 
-## OUR QUEST: Make Board Game Geek, but Vastly Superior in Every Imaginable Way
+## OUR QUEST: BoardGameGeek, but Vastly Superior in Every Imaginable Way
 
 ### The Team
 * Chris McMenomy [@caristopmer](http://www.github.com/caristopmer)
