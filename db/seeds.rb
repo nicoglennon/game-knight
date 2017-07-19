@@ -1,6 +1,15 @@
 require 'faker'
 require 'date'
 
+tom = User.new(username: "tomtom", email: "tom@tom.com")
+tom.password = "tomtom"
+tom.save
+
+tim = User.new(username: "timtim", email: "tim@tim.com")
+tim.password = "timtim"
+tim.save
+
+
 player_numbers = ["2-4", "2-6", "2", "4-8"]
 durationz = ["30-60", "120+", "60-90"]
 

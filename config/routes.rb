@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get '/' => 'pages#index'
+  root to: 'pages#index'
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

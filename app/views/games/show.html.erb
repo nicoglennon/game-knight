@@ -3,8 +3,7 @@
   <p class="game-details">For <%= @game.number_of_players %> Players, <%= @game.duration %></p>
 
   <%= image_tag(@game.image_url) %>
-  <!-- <%= game.fans.count %> Fans -->
-  <!-- <%= game.owners.count %> Owners -->
+
 
   <p class="game-description"><%= @game.description %></p>
   <p class="game-details">Released <%= @game.release_date %> by <%= @game.publisher %></p>
@@ -18,11 +17,10 @@
   </ul>
 
   <div class="reviews">
-    <h2><%= @game.reviews.count %> Reviews</h2>
-    <!-- <%= render @game.reviews %> -->
+
 
     <h3>Write a Review</h3>
-      <!-- <%= render #'reviews/form' %> -->
+
   </div>
 </div>
 
