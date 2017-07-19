@@ -7,7 +7,6 @@ class CreateGames < ActiveRecord::Migration[5.1]
       t.string :duration
       t.datetime :release_date
       t.string :publisher
-      t.integer :category_id
 
       t.timestamps
     end
