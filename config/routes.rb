@@ -9,10 +9,15 @@ Rails.application.routes.draw do
   get '/search', to: 'pages#search'
 
   resources :users
+
   resources :games, only: [:show, :index]
+
+
   resources :categories, only: [:show]
   resources :mechanisms, only: [:show]
   resources :reviews, only: [:index]
+  resources :ownerships, only: [:create, :destroy]
+  resources :favoritings, only: [:create, :destroy]
 
   mount Thredded::Engine => '/forum'
 
