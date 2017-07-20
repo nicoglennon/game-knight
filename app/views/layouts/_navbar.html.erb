@@ -1,13 +1,22 @@
 <nav>
-      <%= link_to 'Home', root_path %>
-      <%= link_to "Forum", '/forum' %>
+  <div class="nav-wrapper">
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="left hide-on-med-and-down">
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to "Advanced Search", '/search' %></li>
+    </ul>
+    <ul class="right hide-on-med-and-down">
       <% if session[:user_id] != nil %>
-        <%= link_to 'Log out', controller: 'sessions', action: 'destroy' %>
-        <%= link_to "My Library", user_path(current_user) %>
+        <li><%= link_to 'Log out', controller: 'sessions', action: 'destroy' %></li>
+        <li><%= link_to "My Library", user_path(current_user) %></li>
       <% else %>
-        <%= link_to "Log in", '/login' %>
-        <%= link_to "Register", new_user_path %>
+       <li><%= link_to "Log in", '/login' %></li>
+        <li><%= link_to "Register", new_user_path %></li>
       <% end %>
+
+    </ul>
+  </div>
+
       <%= render partial: 'layouts/search' %>
       <%= link_to "Advanced Search", '/search' %>
 </nav>

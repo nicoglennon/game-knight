@@ -1,29 +1,47 @@
+
 <div class="container">
-  <h1><%= @game.title %></h1>
-  <p class="game-details">For <%= @game.number_of_players %> Players, <%= @game.duration %> Minutes Play Time</p>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-image">
+              <img src="https://www.wired.com/wp-content/uploads/2015/11/zelda.jpg">
+              <h2 class="card-title" id="game-title"><%= @game.title %></h2>
+            </div>
+            <div class="card-content">
+             <p class="game-details">For <%= @game.number_of_players %> Players, <%= @game.duration %> Minutes Play Time</p>
+            </div>
+            <div class="card-action">
+              <a href="#"></a>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <%= image_tag(@game.image_url) %>
+  <div class="card body">
+    <p class="game-description"><%= @game.description %></p>
+    <p class="game-details">Released <%= @game.release_date %> , Designed by <%= @game.designer %></p>
+     <%= render partial: '/likes_favorites_buttons', locals: {game: @game, favoriting: @favoriting, ownership: @ownership} %>
+    <ul class="categories-list">
+      <%= render @game.categories %>
+    </ul>
 
-
-  <p class="game-description"><%= @game.description %></p>
-  <p class="game-details">Released <%= @game.release_date %> , Designed by <%= @game.designer %></p>
-
-  <ul class="categories-list">
-    <%= render @game.categories %>
-  </ul>
-
-  <ul class="mechanisms-list">
-    <%= render @game.mechanisms %>
-  </ul>
-
-  <div class="reviews">
-    <h2><%= @game.reviews.count %> Reviews</h2>
-    <%= render @game.reviews %>
-    <% if logged_in? %>
-      <%= render partial: '/likes_favorites_buttons', locals: {game: @game, favoriting: @favoriting, ownership: @ownership} %>
-      <h3>Write a Review</h3>
-      <%= render partial: 'reviews/form', locals: {game: @game} %>
-    <% end %>
+    <ul class="mechanisms-list">
+      <%= render @game.mechanisms %>
+    </ul>
   </div>
+
+    <h5><%= @game.reviews.count %> Reviews</h5>
+    <div class="reviews card">
+      <%= render @game.reviews %>
+      <% if logged_in? %>
+    </div>
+   
+
+      <h3>Write a Review</h3>
+      <div class="card">
+      <%= render partial: 'reviews/form', locals: {game: @game} %>
+    </div>
+    <% end %>
 </div>
+
 

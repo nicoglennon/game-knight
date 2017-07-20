@@ -13,3 +13,43 @@
  *= require_tree .
  *= require_self
  */
+
+main {
+  padding: 2%;
+  margin: auto;
+  max-width: 1400px;
+  background-color: #dee8eb;
+}
+
+nav {
+  background-color: #26a69a;
+   padding: 0px;
+}
+
+.form {
+  margin: auto;
+  text-align: center;
+  max-width: 400px;
+  padding: 1% 5%;
+}
+
+.card-div {
+  display: inline-block;
+  width: 45%;
+  margin: 1%;
+}
+.game-cards {
+  margin: auto;
+  text-align: center;
+}
+.page-title {
+  margin-left: 3%;
+}
+
+.reviews, .body {
+  padding: 2%;
+}
+
+#game-title {
+  font-size: 45px;
+}

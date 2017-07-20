@@ -5,22 +5,25 @@
     <script src="https://use.fontawesome.com/fc6aeb68c1.js"></script>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/css/materialize.min.css' %>
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
+
+    <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js' %>
+    <%= javascript_include_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/js/materialize.min.js' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
     <header>
       <p> This is where our sick image goes! </p>
+      <h1>Game Knight</h1>
+      <%= render partial: 'layouts/navbar' %>
     </header>
-
-    <%= render partial: 'layouts/navbar' %>
-
-    <h1>Game Knight</h1>
       <%= render 'layouts/errors' %>
 
-    <div id="main-content">
+    <main id="main-content">
     <%= yield %>
-    </div>
+    </main>
   </body>
 </html>
