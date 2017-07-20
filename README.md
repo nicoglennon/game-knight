@@ -23,4 +23,4 @@ Main functionalities, or *epics* if you will, include:
   * a profile page (library), which includes lists of owned and favorited games
   * access to write reviews of games and post in the forums
 
-**Check back soon for a link to our website!**
+*[It's Game Knight!](http://game-knight-dbc-3.herokuapp.com)*
