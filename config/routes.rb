@@ -5,8 +5,10 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
-  resources :users
 
+  get '/search', to: 'pages#search'
+
+  resources :users
   resources :games, only: [:show, :index]
   resources :categories, only: [:show]
   resources :mechanisms, only: [:show]

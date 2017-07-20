@@ -1,7 +1,13 @@
 class GamesController < ApplicationController
 
   def index
-    @games = Game.all
+    if params[:search]
+      @games = Game.search(params[:search])
+    # elsif # ADVANCED SEARCH
+    #   @games = Game.advanced_search(params)
+    else
+      @games = Game.all
+    end
   end
 
   def show
