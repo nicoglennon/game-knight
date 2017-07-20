@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :mechanisms, only: [:show]
   resources :reviews, only: [:index]
 
+  mount Thredded::Engine => '/forum'
+
 end
