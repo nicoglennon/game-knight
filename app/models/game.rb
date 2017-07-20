@@ -7,6 +7,7 @@ class Game < ApplicationRecord
   has_many :mechanisms, through: :game_mechanisms
   has_many :game_categories
   has_many :categories, through: :game_categories
+  has_many :reviews
 
   validates :title, presence: true
 end

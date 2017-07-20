@@ -35,3 +35,10 @@ end
 10.times do
   GameCategory.create(game_id: Game.all.sample.id, category_id: Category.all.sample.id)
 end
+
+15.times do
+  Review.create(
+    body: Faker::Hacker.say_something_smart + Faker::ChuckNorris.fact,
+    game_id: Game.all.sample.id,
+    author_id: User.all.sample.id)
+end
