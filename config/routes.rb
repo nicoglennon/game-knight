@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   resources :ownerships, only: [:create, :destroy]
   resources :favoritings, only: [:create, :destroy]
 
+  mount Thredded::Engine => '/forum'
+
 end

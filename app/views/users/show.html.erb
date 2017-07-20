@@ -1,12 +1,13 @@
 <div class="container">
   <h1><%= @user.username %>'s Games Library</h1>
 
-  <p> Owned Games </p>
+  <h2> Owned Games </h2>
+
   <ul class="owned-games-list">
     <%= render @user.owned_games %>
   </ul>
 
-  <p> Favorite's List </p>
+  <h2> Favorites List </h2>
   <ul class="favorites-list">
     <%= render @user.favorited_games %>
   </ul>
