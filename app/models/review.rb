@@ -3,5 +3,6 @@ class Review < ApplicationRecord
   belongs_to :game
 
   validates :body, :title, presence: true
+  # what do we think about limiting the length of a review?
 end
 
