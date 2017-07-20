@@ -8,12 +8,16 @@
     <ul class="right hide-on-med-and-down">
       <% if session[:user_id] != nil %>
         <li><%= link_to 'Log out', controller: 'sessions', action: 'destroy' %></li>
-        <li><%= link_to "My Library" %></li>
+        <li><%= link_to "My Library", user_path(current_user) %></li>
       <% else %>
        <li><%= link_to "Log in", '/login' %></li>
         <li><%= link_to "Register", new_user_path %></li>
       <% end %>
+
     </ul>
-</nav>
-    <%= render partial: 'layouts/search' %>
   </div>
+
+      <%= render partial: 'layouts/search' %>
+      <%= link_to "Advanced Search", '/search' %>
+</nav>
+

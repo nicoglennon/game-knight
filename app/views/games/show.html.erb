@@ -8,8 +8,7 @@
               <h2 class="card-title" id="game-title"><%= @game.title %></h2>
             </div>
             <div class="card-content">
-            <p class="game-details">For <%= @game.number_of_players %> Players, <%= @game.duration %></p>
-
+             <p class="game-details">For <%= @game.number_of_players %> Players, <%= @game.duration %> Minutes Play Time</p>
             </div>
             <div class="card-action">
               <a href="#"></a>
@@ -19,27 +18,25 @@
       </div>
 
   <div class="card body">
+    <p class="game-description"><%= @game.description %></p>
+    <p class="game-details">Released <%= @game.release_date %> , Designed by <%= @game.designer %></p>
+     <%= render partial: '/likes_favorites_buttons', locals: {game: @game, favoriting: @favoriting, ownership: @ownership} %>
+    <ul class="categories-list">
+      <%= render @game.categories %>
+    </ul>
 
-  <%= image_tag(@game.image_url) %>
-
-
-  <p class="game-description"><%= @game.description %></p>
-  <p class="game-details">Released <%= @game.release_date %> by <%= @game.publisher %></p>
-
-  <ul class="categories-list">
-    <%= render @game.categories %>
-  </ul>
-
-  <ul class="mechanisms-list">
-    <%= render @game.mechanisms %>
-  </ul>
+    <ul class="mechanisms-list">
+      <%= render @game.mechanisms %>
+    </ul>
   </div>
 
-  <h5><%= @game.reviews.count %> Reviews</h5>
-  <div class="reviews card">
-    <%= render @game.reviews %>
-    <% if logged_in? %>
-  </div>
+    <h5><%= @game.reviews.count %> Reviews</h5>
+    <div class="reviews card">
+      <%= render @game.reviews %>
+      <% if logged_in? %>
+    </div>
+   
+
       <h3>Write a Review</h3>
       <div class="card">
       <%= render partial: 'reviews/form', locals: {game: @game} %>
