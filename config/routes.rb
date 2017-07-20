@@ -10,8 +10,9 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :games, only: [:show, :index]
-
+  resources :games, only: [:show, :index] do
+    resources :reviews, shallow: true
+  end
 
   resources :categories, only: [:show]
   resources :mechanisms, only: [:show]
