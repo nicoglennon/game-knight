@@ -3,11 +3,11 @@
 <div class="form">
   <%= form_for @review do |f|  %>
     <p>
-      <%= f.label "Title" %>
+      <%= f.label "Title" %><br>
       <%= f.text_field :title %>
     </p>
     <p>
-      <%= f.label "Your Review" %>
+      <%= f.label "Your Review" %><br>
       <%= f.text_area :body %>
     </p>
       <%= f.hidden_field :author_id, value: current_user.id %> <!-- double-check that this works -->
