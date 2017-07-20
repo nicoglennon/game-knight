@@ -4,7 +4,7 @@
         <div class="col">
           <div class="card">
             <div class="card-image">
-              <img src="https://www.wired.com/wp-content/uploads/2015/11/zelda.jpg">
+              <img src="<%= @game.image_url %>">
               <h2 class="card-title" id="game-title"><%= @game.title %></h2>
             </div>
             <div class="card-content">
@@ -35,7 +35,7 @@
       <%= render @game.reviews %>
       <% if logged_in? %>
     </div>
-   
+
 
       <h3>Write a Review</h3>
       <div class="card">
