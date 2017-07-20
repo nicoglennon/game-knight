@@ -19,11 +19,16 @@ main {
   margin: auto;
   max-width: 1400px;
   background-color: #dee8eb;
+  margin-top: 55px;
+}
+
+body {
+
 }
 
 nav {
   background-color: #26a69a;
-   padding: 0px;
+   padding: 0 1%;
 }
 
 .form {
@@ -35,7 +40,7 @@ nav {
 
 .card-div {
   display: inline-block;
-  width: 45%;
+  width: 20%;
   margin: 1%;
 }
 .game-cards {
