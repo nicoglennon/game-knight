@@ -1,0 +1,12 @@
+<li class="thredded--user-navigation--standalone--session thredded--user-navigation--item">
+  <% resource_name = Thredded.user_class_name.underscore %>
+  <% if thredded_signed_in? %>
+    <%= link_to '/logout' do %>
+      Sign Out
+    <% end %>
+  <% else %>
+    <%= link_to '/login' do %>
+      Sign In / Register
+    <% end %>
+  <% end %>
+</li>
