@@ -1,8 +1,6 @@
 <div class="container">
   <h1><%= @user.username %>'s Games Library</h1>
 
-  <%= image_tag(@user.image_url) %>
-
 
   <ul class="owned-games-list">
     <%= render @user.owned_games %>
@@ -11,5 +9,5 @@
   <ul class="favorites-list">
     <%= render @user.favorited_games %>
   </ul>
-  
+
 </div>
