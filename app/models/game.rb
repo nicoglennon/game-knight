@@ -10,4 +10,12 @@ class Game < ApplicationRecord
   has_many :reviews
 
   validates :title, presence: true
+
+  def self.search(search)
+    self.where("title LIKE ? OR description LIKE ?", "%#{search.capitalize}%", "%#{search.capitalize}%") 
+  end
+
+  # def self.advanced_search(search)
+  #   self.where("title LIKE ? OR description LIKE ?", "%#{search.capitalize}%", "%#{search.capitalize}%") 
+  # end
 end
