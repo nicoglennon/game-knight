@@ -13,5 +13,7 @@ Rails.application.routes.draw do
   resources :categories, only: [:show]
   resources :mechanisms, only: [:show]
   resources :reviews, only: [:index]
+  resources :favoritings, only: [:create, :destroy]
+  resources :ownerships, only: [:create, :destroy]
 
 end
