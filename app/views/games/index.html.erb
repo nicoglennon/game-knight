@@ -1,1 +1,6 @@
-List of all the games
+<h1>All Games</h1>
+
+<% @games.each do |game| %>
+  <%= render '_game', locals: {game: game} %>
+<% end %>
+
