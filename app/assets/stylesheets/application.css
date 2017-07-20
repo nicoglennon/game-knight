@@ -45,3 +45,11 @@ nav {
 .page-title {
   margin-left: 3%;
 }
+
+.reviews, .body {
+  padding: 2%;
+}
+
+#game-title {
+  font-size: 45px;
+}
