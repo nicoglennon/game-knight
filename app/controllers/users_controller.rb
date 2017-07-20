@@ -12,6 +12,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+    redirect_to '/login' if @user != current_user
+  end
+
   private
 
   def user_params

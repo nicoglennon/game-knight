@@ -17,10 +17,12 @@
   </ul>
 
   <div class="reviews">
-
-
-    <h3>Write a Review</h3>
-
+    <h2><%= @game.reviews.count %> Reviews</h2>
+    <%= render @game.reviews %>
+    <% if logged_in? %>
+      <h3>Write a Review</h3>
+      <%= render partial: 'reviews/form', locals: {game: @game} %>
+    <% end %>
   </div>
 </div>
 

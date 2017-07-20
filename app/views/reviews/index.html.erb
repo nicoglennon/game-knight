@@ -1,0 +1,5 @@
+<h1>All Reviews</h1>  <!-- sorted by most recent -->
+
+<% @reviews.each do |review| %>
+  <%= render partial: 'review', locals: {review: review} %>
+<% end %>
