@@ -8,9 +8,13 @@ class GamesController < ApplicationController
     else
       @games = Game.all
     end
+    @favoriting = Favoriting.new
+    @ownership = Ownership.new
   end
 
   def show
+    @favoriting = Favoriting.new
+    @ownership = Ownership.new
     @game = Game.find(params[:id])
     @review = Review.new
   end

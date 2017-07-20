@@ -20,7 +20,7 @@
     <h2><%= @game.reviews.count %> Reviews</h2>
     <%= render @game.reviews %>
     <% if logged_in? %>
-      <%= render '/likes_favorites_buttons' %>
+      <%= render partial: '/likes_favorites_buttons', locals: {game: @game, favoriting: @favoriting, ownership: @ownership} %>
       <h3>Write a Review</h3>
       <%= render partial: 'reviews/form', locals: {game: @game} %>
     <% end %>

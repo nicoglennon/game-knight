@@ -1,7 +1,13 @@
 <div class='button_container'>
-  <%= link_to 'heart' %>
-  <%= link_to 'plus' %>
+  <%= form_for favoriting do |f| %>
 
+    <%= f.hidden_field(:game,  value: game.id) %>
+    <%= f.submit "Heart" %>
+  <% end %>
 
+  <%= form_for ownership do |f| %>
+    <%= f.hidden_field(:ownership, value: game.id) %>
+    <%= f.submit "Plus" %>
+  <% end %>
 
 </div>
