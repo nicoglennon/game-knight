@@ -4,10 +4,12 @@
     <ul class="left hide-on-med-and-down">
       <li><%= link_to 'Home', root_path %></li>
       <li><%= link_to "Advanced Search", '/search' %></li>
-      <li><%= link_to "Forums", '/forums' %></li>
+      <li><%= link_to "Browse", games_path %></li>
+
     </ul>
     <ul class="right hide-on-med-and-down">
       <% if session[:user_id] != nil %>
+        <li><%= link_to "Forums", '/forums' %></li>
         <li><%= link_to 'Log out', controller: 'sessions', action: 'destroy' %></li>
         <li><%= link_to "My Library", user_path(current_user) %></li>
       <% else %>
