@@ -62,10 +62,12 @@ ActiveRecord::Schema.define(version: 20170720194617) do
     t.string "title", null: false
     t.text "description"
     t.string "number_of_players"
-    t.string "duration"
-    t.datetime "release_date"
-    t.string "publisher"
+    t.integer "duration"
+    t.string "release_date"
+    t.string "designer"
     t.string "image_url"
+    t.string "image_thumbnail_url"
+    t.integer "bgg_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
