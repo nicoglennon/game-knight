@@ -1,1 +1,6 @@
-index.html.erb
+<h1>All Games</h1>
+
+<% @games.each do |game| %>
+  <%= link_to game, game.title %>
+<% end %>
+

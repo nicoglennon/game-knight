@@ -1,1 +1,19 @@
 <!-- THIS IS A FORM TO CREATE A REVIEW -->
+
+<div class="form">
+  <%= form_for @review do |f|  %>
+    <p>
+      <%= f.label "Title" %>
+      <%= f.text_field :title %>
+    </p>
+    <p>
+      <%= f.label "Your Review" %>
+      <%= f.text_area :body %>
+    </p>
+      <%= f.hidden_field :author_id, value: current_user.id %> <!-- double-check that this works -->
+      <%= f.hidden_field :game_id, value: game.id %> <!-- passed in as local variable -->
+    <p>
+      <%= f.submit "Create" %>
+    </p>
+  <% end %>
+</div>
