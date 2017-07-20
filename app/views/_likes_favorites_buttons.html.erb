@@ -2,12 +2,12 @@
   <%= form_for favoriting do |f| %>
 
     <%= f.hidden_field(:game,  value: game.id) %>
-    <%= f.submit "Heart" %>
+    <%= f.button  '<i class="fa fa-heart-o" aria-hidden="true"></i>'.html_safe %>
   <% end %>
 
   <%= form_for ownership do |f| %>
     <%= f.hidden_field(:game, value: game.id) %>
-    <%= f.submit "Plus" %>
+    <%= f.button '<i class="fa fa-plus-square-o" aria-hidden="true"></i>'.html_safe %>
   <% end %>
 
 </div>
