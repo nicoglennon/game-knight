@@ -1,15 +1,25 @@
-<div class="form">
-  <%= form_for(:session, url: "/login")  do |f|  %>
-    <p>
-      <%= f.label "Email" %>
-      <%= f.email_field :email %>
-    </p>
-    <p>
-      <%= f.label "Password" %>
-      <%= f.password_field :password %>
-    </p>
-    <p>
-      <%= f.submit "Log In" %>
-    </p>
-  <% end %>
+
+  <div class="form center card">
+  <h2>Log In</h2>
+    <%= form_for(:session, url: "/login")  do |f|  %>
+      <div class="row">
+        <div class="input-field">
+          <%= f.label "Email" %>
+          <%= f.email_field :email %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field">
+          <%= f.label "Password" %>
+          <%= f.password_field :password %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field">
+          <%= f.submit "Log In", class: "ctr waves-effect waves-light btn" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

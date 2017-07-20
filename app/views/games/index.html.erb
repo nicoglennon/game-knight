@@ -1,11 +1,11 @@
-<h1>Games</h1>
+<h1 class="page-title">Games</h1>
 <% if @games.blank? %>
   <p>There are no games containing the term '<%= params[:search] %>'.</p>
 <% else %>
-  <ul>
+  <div class="game-cards">
     <% @games.each do |game| %>
-      <li><%= link_to game.title, game_path(game) %></li> 
+      <%= render partial: 'game_card', locals: { game: game } %>
     <% end %>
-  </ul>
+  </div>
 <% end %>
 
