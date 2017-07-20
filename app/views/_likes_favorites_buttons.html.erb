@@ -6,7 +6,7 @@
   <% end %>
 
   <%= form_for ownership do |f| %>
-    <%= f.hidden_field(:ownership, value: game.id) %>
+    <%= f.hidden_field(:game, value: game.id) %>
     <%= f.submit "Plus" %>
   <% end %>
 
