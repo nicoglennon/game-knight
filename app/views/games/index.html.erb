@@ -1,1 +1,9 @@
-index.html.erb
+<% if @games.blank? %>
+  <p>There are no games containing the term '<%= params[:search] %>'.</p>
+<% else %>
+  <ul>
+    <% @games.each do |game| %>
+      <li><%= link_to game.title, game_path(game) %></li> 
+    <% end %>
+  </ul>
+<% end %>
