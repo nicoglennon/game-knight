@@ -25,7 +25,7 @@ def seed_test_game_data
               number_of_players: player_numbers.sample,
               duration: durationz.sample,
               release_date: release_dates.sample,
-              publisher: Faker::Zelda.character + " Games",
+              designer: Faker::Zelda.character + " Games",
               image_url: "",
               image_thumbnail_url: ""
               )
@@ -81,6 +81,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     game_args[:number_of_players] = player_range(game)
     game_args[:duration] = game["playingTime"]
     game_args[:release_date] = game["yearPublished"].to_s
+    game_args[:designer] = Faker::Zelda.character + " Games"
     game_args[:image_url] = game["image"]
     game_args[:image_thumbnail_url] = game["thumbnail"]
     game_args[:bgg_id] = game["gameId"]
