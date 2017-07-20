@@ -39,7 +39,7 @@ end
 15.times do
   Review.create(
     title: Faker::MostInterestingManInTheWorld.quote,
-    body: Faker::Hacker.say_something_smart + Faker::ChuckNorris.fact,
+    body: Faker::Hacker.say_something_smart + " " + Faker::ChuckNorris.fact,
     game_id: Game.all.sample.id,
     author_id: User.all.sample.id)
 end
