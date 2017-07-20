@@ -16,7 +16,7 @@
       <%= link_to 'Home', root_path %>
       <% if session[:user_id] != nil %>
         <%= link_to 'Log out', controller: 'sessions', action: 'destroy' %>
-        <%= link_to "My Library" %>
+        <%= link_to "My Library", user_path(current_user) %>
       <% else %>
         <%= link_to "Log in", '/login' %>
         <%= link_to "Register", new_user_path %>
