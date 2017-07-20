@@ -67,6 +67,17 @@ def seed_real_games
   collection_array.each do |game|
     game_args = {}
     game_args[:title] = game["name"]
+    game_args[:description] = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
     game_args[:number_of_players] = player_range(game)
     game_args[:duration] = game["playingTime"]
     game_args[:release_date] = game["yearPublished"].to_s
@@ -94,31 +105,22 @@ def seed_desc_mechs_designers
     info_hash = JSON.parse(Net::HTTP.get(uri))
 
     current_game = Game.find_by(bgg_id: game_id)
+    # description
     current_game[:description] = info_hash["description"]
+    # mechs
+    info_hash["mechanics"].each do |mechanic|
+      current_game.mechanisms << Mechanism.find_or_create_by(name: mechanic)
+    end
+    # designer
+    current_game[:designer] = info_hash["designers"][0]
 
-
-
-    wait 5 seconds
+    current_game.save
+    sleep(5)
   end
+end
 
+def seed_categories
 
-  game_params_array = []
-  collection_array.each do |game|
-    game_args = {}
-    game_args[:title] = game["name"]
-    game_args[:number_of_players] = player_range(game)
-    game_args[:duration] = game["playingTime"]
-    game_args[:release_date] = game["yearPublished"].to_s
-    game_args[:image_url] = game["image"]
-    game_args[:image_thumbnail_url] = game["thumbnail"]
-    game_args[:bgg_id] = game["gameId"]
-    game_params_array << game_args
-  end
-
-  temp_games = []
-  game_params_array.each do |params|
-    temp_games << Game.create(params)
-  end
 end
 
 def player_range(game)
@@ -129,8 +131,9 @@ end
 #************************************
 # Comment the methods below in or out depending on what you want to do.
  seed_user_data
- seed_test_game_data
- seed_review_data
+# seed_test_game_data
  seed_real_games
+ seed_review_data
 # seed_desc_mechs_designers
+# seed_categories
 #************************************
