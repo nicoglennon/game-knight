@@ -20,7 +20,7 @@ class Game < ApplicationRecord
   # end
 
   def self.popular
-    self.select("games.*, COUNT(fans.id) fan_count").joins(:favoritings).group('games.id').order("fan_count DESC")
+    self.select("games.*, COUNT(fans.id) fan_count").joins(:favoritings).group('games.id').order("fan_count")
 
   end
 

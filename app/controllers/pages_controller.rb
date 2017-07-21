@@ -4,7 +4,6 @@ class PagesController < ApplicationController
     @ownership = Ownership.new
     @popular_games = Game.popular
     @best_games = Game.best_selling
-    # p @popular_games
   end
 
   def search
