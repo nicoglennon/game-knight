@@ -1,6 +1,5 @@
 
   <div class="card title-card">
-    <%= image_tag @user.avatar.url(:medium) %>
     <h2><%= @user.username.capitalize %>'s Library</h2>
   </div>
 
@@ -11,6 +10,7 @@
   </ul>
   <div class="card title-card col s12" id="test-swipe-1">
     <h4>Profile</h4>
+    <%= image_tag @user.avatar.url(:thumb) %>
     <hr>
   </div>
 

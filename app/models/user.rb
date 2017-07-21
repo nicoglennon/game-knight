@@ -11,13 +11,17 @@ class User < ApplicationRecord
 #PAPERCLIP
   attr_accessor :avatar
   attr_reader :avatar_remote_url
-  has_attached_file :avatar, styles: { medium: "300x300", thumb: "100x100" }, default_url: 'http://s3.amazonaws.com/game-knight-user-avatars/default-avatar.jpg'
+  has_attached_file :avatar, styles: {
+    medium: "300x300>",
+    square: "200x200>",
+    thumb: "100x100>"
+    }, default_url: 'default-avatar.jpg'
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
 
-  def avatar_remote_url=(url_value)
-    self.avatar = URI.parse(url_value)
-    @avatar_remote_url = url_value
-  end
+  # def avatar_remote_url=(url_value)
+  #   self.avatar = URI.parse(url_value)
+  #   @avatar_remote_url = url_value
+  # end
 
 end
