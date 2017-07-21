@@ -136,3 +136,14 @@ footer.page-footer {
 .indicator {
   background-color: #02e3b0 !important;
 }
+
+.no-games {
+  color: white;
+  padding: 1%;
+  background-color: #F08080;
+}
+
+.no-decoration {
+  color: white;
+  text-decoration: underline;
+}
