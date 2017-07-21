@@ -209,3 +209,12 @@ div.card-div {
 .search-span {
   color: #26a69a;
 }
+
+#counts {
+  background-color: black;
+  border-radius: 20px;
+}
+
+.card-action a {
+  font-size: 0.7em!important;
+}
