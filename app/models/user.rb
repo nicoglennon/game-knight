@@ -5,6 +5,8 @@ class User < ApplicationRecord
   has_many :favorited_games, through: :favoritings, source: :game
   has_many :owned_games, through: :ownerships, source: :game
   has_many :reviews, foreign_key: :author_id
+  has_many :topics
+  has_many :posts
 
   validates :email, :username, presence:true, uniqueness:true
 
