@@ -1,13 +1,14 @@
 <div class='button_container'>
   <%= form_for favoriting do |f| %>
-
     <%= f.hidden_field(:game,  value: game.id) %>
-    <%= f.button  '<i class="fa fa-heart-o" aria-hidden="true"></i>'.html_safe %>
+    <%= f.hidden_field(:path, value: Rails.application.routes.recognize_path(request.original_url)) %>
+    <%= f.button  '<i class="material-icons">favorite_border</i>'.html_safe, class: "btn-floating halfway-fab waves-effect waves-light red" %>
   <% end %>
 
   <%= form_for ownership do |f| %>
     <%= f.hidden_field(:game, value: game.id) %>
-    <%= f.button '<i class="fa fa-plus-square-o" aria-hidden="true"></i>'.html_safe %>
+    <%= f.hidden_field(:path, value: Rails.application.routes.recognize_path(request.original_url)) %>
+    <%= f.button '<i class="material-icons">add</i>'.html_safe, class: "btn-floating halfway-fab waves-effect waves-light blue left" %>
   <% end %>
 
 </div>

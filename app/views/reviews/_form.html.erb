@@ -1,19 +1,19 @@
 <!-- THIS IS A FORM TO CREATE A REVIEW -->
 
 <div class="form">
-  <%= form_for @review do |f|  %>
-    <p>
+  <%= form_for @review, url: game_reviews_path(game.id), class: "center" do |f|  %>
+    <div class="input-field">
       <%= f.label "Title" %><br>
-      <%= f.text_field :title %>
-    </p>
-    <p>
+      <%= f.text_field :title, class: "input-sizing" %>
+    </div>
+    <div class="input-field">
       <%= f.label "Your Review" %><br>
-      <%= f.text_area :body %>
-    </p>
-      <%= f.hidden_field :author_id, value: current_user.id %> <!-- double-check that this works -->
+      <%= f.text_area :body, class: "materialize-textarea" %>
+    </div>
+      <%= f.hidden_field :author_id, value: current_user.id %>
       <%= f.hidden_field :game_id, value: game.id %> <!-- passed in as local variable -->
-    <p>
-      <%= f.submit "Create" %>
+    <p class="submit-p">
+      <%= f.submit "Submit Review", class: "waves-effect waves-light btn center" %>
     </p>
   <% end %>
 </div>
