@@ -10,6 +10,12 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :forums, only: [:show, :index] do
+    resources :topics, except: [:index] do
+      resources :posts, except: [:show, :index]
+    end
+  end
+
   resources :games, only: [:show, :index] do
     resources :reviews, shallow: true
   end

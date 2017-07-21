@@ -1,0 +1,12 @@
+<div class="form">
+  <%= form_for @post, url: forum_topic_posts_path(forum.id, topic.id), class: "center" do |f|  %>
+    <div class="input-field">
+      <%= f.label "Your Post" %><br>
+      <%= f.text_area :content, class: "materialize-textarea" %>
+    </div>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+    <p class="submit-p">
+      <%= f.submit "Post", class: "waves-effect waves-light btn center" %>
+    </p>
+  <% end %>
+</div>
