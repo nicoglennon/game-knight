@@ -6,6 +6,6 @@
     By <%= post.user.username %><%= post.created_at.strftime(" on %m/%d/%Y at %I:%M %p") %>
   </p>
   <% if post.user.id == current_user.id %>
-    <%= link_to "Delete", post, method: :delete %>
+    <%= link_to "Delete", forum_topic_post_path(post.topic, post), method: :delete %>
   <% end %>
 </div>

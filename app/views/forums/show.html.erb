@@ -1,9 +1,9 @@
 <h1><%= @forum.name %></h1>
 
 <% for topic in @forum.topics %>
-  <h3><%= link_to topic.name, forum_topic_path(topic.id) %></h3>
+  <h3><%= link_to topic.title, forum_topic_path(topic.id) %></h3>
     <p class="details"><%= topic.posts.count %> Posts</p>
-      <% if topic.posts %>
+      <% if topic.posts.length > 0 %>
         <p class="details">Last Post <%= time_ago_in_words(topic.posts.last.created_at) %></p>
       <% end %>
     <p class="description"><%= topic.description %></p>

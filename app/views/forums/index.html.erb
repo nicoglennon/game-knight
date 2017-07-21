@@ -1,7 +1,7 @@
 <h1>Forums</h1>
 
 <% for forum in @forums %>
-  <h3><%= link_to forum.name, forum_path %></h3>
+  <h3><%= link_to forum.name, forum_path(forum) %></h3>
     <p class="details"><%= forum.topics.count %> Topics</p>
     <p class="description"><%= forum.description %></p>
 <% end %>

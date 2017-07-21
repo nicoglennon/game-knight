@@ -1,9 +1,9 @@
-<h1><%= @topic.name %></h1>
-    <p class="details"><%= topic.posts.count %> Posts</p>
-      <% if topic.posts %>
-        <p class="details">Last Post <%= time_ago_in_words(topic.posts.last.created_at) %></p>
+<h1><%= @topic.title %></h1>
+    <p class="details"><%= @topic.posts.count %> Posts</p>
+      <% if @topic.posts.length > 0 %>
+        <p class="details">Last Post <%= time_ago_in_words(@topic.posts.last.created_at) %></p>
       <% end %>
-    <p class="description"><%= topic.description %></p>
+    <p class="description"><%= @topic.description %></p>
 
 
 <%= render @topic.posts %>
