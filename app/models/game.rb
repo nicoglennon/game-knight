@@ -12,10 +12,17 @@ class Game < ApplicationRecord
   validates :title, presence: true
 
   def self.search(search)
-    self.where("title LIKE ? OR description LIKE ?", "%#{search.capitalize}%", "%#{search.capitalize}%") 
+    self.where("title LIKE ? OR description LIKE ?", "%#{search.capitalize}%", "%#{search.capitalize}%")
   end
 
   # def self.advanced_search(search)
-  #   self.where("title LIKE ? OR description LIKE ?", "%#{search.capitalize}%", "%#{search.capitalize}%") 
+  #   self.where("title LIKE ? OR description LIKE ?", "%#{search.capitalize}%", "%#{search.capitalize}%")
   # end
+
+  def most_popular_games(games)
+
+  end
+
+  def best_selling_games(games)
+  end
 end
