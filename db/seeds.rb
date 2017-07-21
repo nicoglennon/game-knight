@@ -74,14 +74,14 @@ def seed_real_games(profile)
   game_params_array = []
   collection_array.each do |game|
     game_args = {}
-    game_args[:title] = game["name"]
+    game_args[:title] = game["name"].to_s
     game_args[:number_of_players] = player_range(game)
-    game_args[:duration] = game["playingTime"]
+    game_args[:duration] = game["playingTime"].to_i
     game_args[:release_date] = game["yearPublished"].to_s
     game_args[:designer] = "N/A"
-    game_args[:image_url] = game["image"]
-    game_args[:image_thumbnail_url] = game["thumbnail"]
-    game_args[:bgg_id] = game["gameId"]
+    game_args[:image_url] = game["image"].to_s
+    game_args[:image_thumbnail_url] = game["thumbnail"].to_s
+    game_args[:bgg_id] = game["gameId"].to_i
     game_params_array << game_args
   end
 
@@ -104,13 +104,13 @@ def seed_desc_mechs_cats_designers
 
     current_game = Game.find_by(bgg_id: game_id)
     # description
-    current_game[:description] = info_hash["description"].gsub(/&#10;/,"\n")
+    current_game[:description] = info_hash["description"].to_s.gsub(/&#10;/,"\n")
     # mechs
     info_hash["mechanics"].each do |mechanic|
-      current_game.mechanisms << Mechanism.find_or_create_by(name: mechanic)
+      current_game.mechanisms << Mechanism.find_or_create_by(name: mechanic.to_s)
     end
     # designer
-    current_game[:designer] = info_hash["designers"][0]
+    current_game[:designer] = info_hash["designers"][0].to_s
 
     # categories
     uri = URI("https://boardgamegeek.com/xmlapi2/thing?id=#{game_id}")
@@ -120,7 +120,7 @@ def seed_desc_mechs_cats_designers
 
     links_array.each do |link|
       if link["type"] == "boardgamecategory"
-        current_game.categories << Category.find_or_create_by(name: link["value"])
+        current_game.categories << Category.find_or_create_by(name: link["value"].to_s)
       end
     end
 
@@ -163,8 +163,8 @@ end
 
 #************************************
 # Comment the methods below in or out depending on what you want to do.
- seed_10_games
-# seed_200_games
+# seed_10_games
+ seed_200_games
 
 # seed_forum_data
 
