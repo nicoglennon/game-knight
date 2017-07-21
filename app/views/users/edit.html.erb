@@ -3,41 +3,31 @@
   <%= form_for(@user, multipart: true) do |f|  %>
     <div class="row">
       <div class="input-field">
-        <%= f.text_field :username %>
+
+        <%= f.text_field :username, class: "input-sizing" %>
+
         <%= f.label "Username" %>
       </div>
     </div>
     <div class="row">
       <div class="input-field">
+
         <%= f.label "Email" %>
         <%= f.email_field :email %>
+        </div>
+    </div>
+    <div class="row">
+      <div class="input-field">
+        <%= f.label "Bio" %><br>
+        <%= f.text_area :bio, class: "materialize-textarea input-sizing" %>
+
       </div>
     </div>
     <div class="row">
       <div class="input-field">
-        <%= f.label "Password" %>
-        <%= f.password_field :password %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field">
-        <%= f.label "Confirm Password" %>
-        <%= f.password_field :password_confirmation %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field">
-        <%= f.file_field :avatar %>
-        <% if @user.avatar? %>
-          <%= image_tag @user.avatar.url(:thumb) %>
-        <% end %>
-      </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="input-field">
-        <%= f.submit "Update", class: "ctr waves-effect waves-light btn" %>
+
+        <%= f.submit "Edit Profile", class: 'btn'%><br>
       </div>
     </div>
   <% end %>
-</div>
+  </div>
