@@ -29,7 +29,6 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'faker'
-gem 'thredded', '~> 0.13.2' # creates forums
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

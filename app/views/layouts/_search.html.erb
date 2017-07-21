@@ -1,3 +1,15 @@
-<%= form_tag(games_path, :method => "get", id: "search-form") do |t|%>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Games" %>
-<% end %>
+ <nav id="searchbar-nav">
+    <div class="nav-wrapper">
+      <%= form_tag(games_path, :method => "get", id: "search-form") do |t|%>
+        <%= content_tag :div, class:"input-field" do %>
+          <%= search_field_tag :search, params[:search], placeholder: "Search Games", id: "search" %>
+          <%= label_tag :search, class: "label-icon" do %>
+            <%= content_tag :i, 'search', class: "material-icons" %>
+          <% end %>
+        <% end %>
+      <% end %>
+  </div>
+</nav>
+ 
+     
+  
