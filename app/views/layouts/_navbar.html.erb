@@ -9,7 +9,7 @@
     </ul>
     <ul class="right hide-on-med-and-down">
       <% if session[:user_id] != nil %>
-        <li><%= link_to "Forums", '/forums' %></li>
+        <li><%= link_to "Forums", '/forum' %></li>
         <li><%= link_to 'Log out', controller: 'sessions', action: 'destroy' %></li>
         <li><%= link_to "My Library", user_path(current_user) %></li>
       <% else %>
