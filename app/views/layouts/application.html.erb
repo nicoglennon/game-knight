@@ -19,11 +19,11 @@
     <header>
       <h1 id="main-title"><%= link_to "Game Knight", root_path, id: "main-link" %></h1>
       <%= render partial: 'layouts/navbar' %>
+    </header>
+
         <% flash.each do |name, msg| %>
           <%= content_tag :div, msg%>
         <% end %>
-    </header>
-
     <main id="main-content">
     <%= yield %>
     </main>

@@ -1,18 +1,34 @@
-<div>
-  <div class="card title-card">
-    <h3>Best Sellers</h3>
-    <% @popular_games.each do |game| %>
+<ul id="tabs-swipe" class="tabs">
+    <li class="tab col s3"><a href="#test-swipe-1" class="profile-links">Best Sellers</a></li>
+    <li class="tab col s3"><a class="profile-links" href="#test-swipe-2">Most Popular</a></li>
+</ul>
+   <div class="card title-card col s12" id="test-swipe-1">
+    <h4>Best Sellers</h4>
+    <hr>
+    <% @best_games.each do |game| %>
       <%= render partial: '/games/game_card', locals: { game: game, favoriting: @favoriting, ownership: @ownership } %>
-      <% end %>
-  </div>
-  <!-- top 3-5 games with most owners -->
-</div>
+    <% end %>
 
-<div>
-  <div class="card title-card">
-    <h3>Most Popular</h3>
+  </div>
+
+  <div class="card title-card col s12" id="test-swipe-2">
+    <h4> Most Popular </h4>
+    <hr>
     <% @popular_games.each do |game| %>
       <%= render partial: '/games/game_card', locals: { game: game, favoriting: @favoriting, ownership: @ownership } %>
     <% end %>
   </div>
-</div>
+
+<!-- <div>
+  <div class="card title-card">
+    <h3>Best Sellers</h3>
+  </div>
+  <!-- top 3-5 games with most owners -->
+<!-- </div> -->
+
+<!-- <div>
+  <div class="card title-card">
+    <h3>Most Popular</h3>
+
+  </div>
+</div> -->
