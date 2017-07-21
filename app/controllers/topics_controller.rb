@@ -1,7 +1,9 @@
 class TopicsController < ApplicationController
 
   def show
-    @topic = Topic.find(params[:topic_id])
+    @topic = Topic.find_by(id: params[:id], forum_id: params[:forum_id])
+    p "*******************************************"
+    p params
   end
 
   def new

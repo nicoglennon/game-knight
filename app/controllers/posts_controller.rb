@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
  def new
     @post = Post.new
-    @topic = Topic.find(params[:topic_id])
+    @topic = Topic.find_by(id: params[:topic_id], forum_id: params[:forum_id])
   end
 
   def create
-    @topic = Topic.find(params[:topic_id])
+    @topic = Topic.find_by(id: params[:topic_id], forum_id: params[:forum_id])
     @post = Post.new(post_params)
     if @post.save
       redirect_to "/forums/#{@post.topic.forum_id}/topics/#{@post.topic_id}"

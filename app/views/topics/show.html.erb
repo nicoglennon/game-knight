@@ -10,6 +10,6 @@
   <% end %>
 
 
-<%= render @topic.posts %>
+<%= render @topic.posts %><br><br>
 <%= link_to "New Post", new_forum_topic_post_path(@topic.forum, @topic), class: "ctr waves-effect waves-light btn" %>
 
