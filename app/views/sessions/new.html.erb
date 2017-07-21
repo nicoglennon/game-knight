@@ -2,16 +2,21 @@
   <div class="form center card">
   <h2>Log In</h2>
     <%= form_for(:session, url: "/login")  do |f|  %>
+
+    <% if @errors %>
+    <%= render 'layouts/errors' %>
+  <% end %>
+
       <div class="row">
         <div class="input-field">
           <%= f.label "Email" %>
-          <%= f.email_field :email %>
+          <%= f.email_field :email, class: "input-sizing" %>
         </div>
       </div>
       <div class="row">
         <div class="input-field">
           <%= f.label "Password" %>
-          <%= f.password_field :password %>
+          <%= f.password_field :password, class: "input-sizing" %>
         </div>
       </div>
 

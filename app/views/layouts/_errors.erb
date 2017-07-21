@@ -1,1 +1,3 @@
- <%= @errors %>
+<% @errors.each do |error|%>
+  <p class="error center"><%= error %></p>
+<% end %>
