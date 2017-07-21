@@ -9,9 +9,6 @@
     <li class="tab col s3"><a class="profile-links" href="#test-swipe-3">Favorited Games</a></li>
 </ul>
   <div class="card title-card col s12" id="test-swipe-1">
-    <h4>Profile</h4>
-    <%= image_tag @user.avatar.url(:thumb) %>
-    <hr>
     <%= render partial: 'profile', locals: { user: @user } %>
   </div>
 

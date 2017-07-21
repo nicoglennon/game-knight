@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to '/login'
     else
-      @errors = @user.errors.full_messages
+      @errors = ["Invalid input."]
       render :new
     end
   end
