@@ -181,10 +181,10 @@ end
 
 #************************************
 # Comment the methods below in or out depending on what you want to do.
-seed_10_games
+# seed_10_games
  # seed_200_games
 
-# seed_forum_data
+seed_forum_data
 
 # seed_test_game_data
 #************************************
