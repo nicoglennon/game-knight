@@ -123,9 +123,18 @@ footer.page-footer {
   background-color: #26a69a;
 }
 
-.profile-links {
-  font-size: 1.3em !important;
-  color: #26a69a !important;
+
+.tabs .tab .profile-links {
+  font-size: 1.3em;
+  color: #26a69a;
+}
+
+.tabs .tab .profile-links:hover {
+  color: #02e3b0;
+}
+
+.tabs .tab .profile-links.active {
+  color: #02e3b0;
 }
 
 .write-review {
@@ -146,4 +155,36 @@ footer.page-footer {
 .no-decoration {
   color: white;
   text-decoration: underline;
+}
+
+.card-image {
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+}
+
+.card-image img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+i.material-icons {
+  z-index: 10000;
+}
+
+.card-content {
+  position: relative;
+}
+
+button.halfway-fab {
+  top: -20px;
+}
+
+div.card-div {
+  vertical-align: top;
+  ;
 }
