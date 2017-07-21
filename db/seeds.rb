@@ -70,7 +70,7 @@ end
 
 # Method to seed basic game data
 def seed_real_games
-  uri = URI("https://bgg-json.azurewebsites.net/collection/caristopmer")
+  uri = URI("https://bgg-json.azurewebsites.net/collection/caristopmer200")
 
   json_string = Net::HTTP.get(uri)
 
@@ -143,6 +143,14 @@ end
 def player_range(game)
   return "#{game["maxPlayers"]}" if game["minPlayers"] == game["maxPlayers"]
   "#{game["minPlayers"]}-#{game["maxPlayers"]}"
+end
+
+def seed_200_games
+
+end
+
+def seed_10_games
+
 end
 
 #************************************
