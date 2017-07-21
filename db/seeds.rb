@@ -115,7 +115,7 @@ def seed_desc_mechs_cats_designers
 
     current_game = Game.find_by(bgg_id: game_id)
     # description
-    current_game[:description] = info_hash["description"]
+    current_game[:description] = info_hash["description"].gsub(/&#10;/,"<br>")
     # mechs
     info_hash["mechanics"].each do |mechanic|
       current_game.mechanisms << Mechanism.find_or_create_by(name: mechanic)
@@ -131,7 +131,7 @@ def seed_desc_mechs_cats_designers
 
     links_array.each do |link|
       if link["type"] == "boardgamecategory"
-        current_game.categories << Category.find_or_create_by(name: link["value"]
+        current_game.categories << Category.find_or_create_by(name: link["value"])
       end
     end
 
