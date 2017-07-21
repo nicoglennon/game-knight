@@ -3,11 +3,13 @@
       <div class="card">
         <div class="card-image">
           <img src="<%= game.image_url %>">
+          <span class='card-title'> duck </span>
         </div>
         <div class="card-content">
           <%= render partial: '/likes_favorites_buttons', locals: {game: game, favoriting: @favoriting, ownership: @ownership} %>
           <span class="card-title"><%= link_to game.title, game_path(game) %></span>
           <p><%= game.description.slice(0, 100) + "... " %><%= link_to "VIEW MORE", game_path(game) %></p>
+
         </div>
       </div>
     </div>
