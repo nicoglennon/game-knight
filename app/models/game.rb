@@ -20,11 +20,11 @@ class Game < ApplicationRecord
   # end
 
   def self.popular
-    self.select("games.*, COUNT(fans.id) fan_count").joins(:favoritings).group('games.id').order("fan_count")
+    self.select("games.*, COUNT(favoritings.id) fan_count").joins(:favoritings).group('games.id').order("fan_count")
 
   end
 
   def self.best_selling
-    self.where
+    self.select("games.*, COUNT(ownerships.id) fan_count").joins(:ownerships).group('games.id').order("fan_count")
   end
 end

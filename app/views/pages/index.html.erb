@@ -1,6 +1,9 @@
 <div>
   <div class="card title-card">
     <h3>Best Sellers</h3>
+    <% @popular_games.each do |game| %>
+      <%= render partial: '/games/game_card', locals: { game: game, favoriting: @favoriting, ownership: @ownership } %>
+      <% end %>
   </div>
   <!-- top 3-5 games with most owners -->
 </div>
@@ -8,5 +11,8 @@
 <div>
   <div class="card title-card">
     <h3>Most Popular</h3>
+    <% @popular_games.each do |game| %>
+      <%= render partial: '/games/game_card', locals: { game: game, favoriting: @favoriting, ownership: @ownership } %>
+    <% end %>
   </div>
 </div>
