@@ -1,0 +1,19 @@
+<div class="col m12">
+    <div class="card horizontal">
+      <div class="card-image profile-picture">
+        <img src="https://lh3.googleusercontent.com/LiyYJqfA2MhiD2xliX9aUQZ5llqESOylW4TZDE62HM3VDXQiInRnoDWmntx5-VT21cY=w300">
+      </div>
+      <div class="card-stacked">
+        <div class="card-content">
+          <h3 >@<%= user.username %></h3>
+          <hr>
+          <p class="bio-title">
+          Bio: <p class="flow-text"><%= user.bio %></p>
+          </p>
+        </div>
+        <div class="card-action">
+          <%= link_to "Edit Profile", edit_user_path(user) %>
+        </div>
+      </div>
+    </div>
+  </div>

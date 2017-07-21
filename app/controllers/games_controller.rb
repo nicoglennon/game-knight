@@ -2,10 +2,12 @@ class GamesController < ApplicationController
 
   def index
     if params[:search]
-      @games = Game.search(params[:search])
+      @search = params[:search]
+      @games = Game.search(@search)
     # elsif # ADVANCED SEARCH
     #   @games = Game.advanced_search(params)
     else
+      @search = nil
       @games = Game.all
     end
     @favoriting = Favoriting.new

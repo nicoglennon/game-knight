@@ -1,14 +1,18 @@
 <div class="card title-card">
-  <h2 class="page-title">Games</h2>
+  <% if @search == "" || @search == nil %>
+      <h4 class="page-title">Browse</h4>
+  <% else %>
+    <h4 class="page-title">Search by: <span class="search-span">'<%= @search %>'<span></h4>
+  <% end %>
 </div>
 <% if @games.blank? %>
-<div class="card title-card">
-  <p>Sorry! There are no games containing the term '<%= params[:search] %>'.</p>
+<div class="card title-card no-games">
+  <p class="padding-left flow-text">Sorry! There are no games containing the term '<%= params[:search] %>'. Try browsing some other games <%= link_to "here", games_path, class: 'no-decoration' %>.</p>
 </div>
 <% else %>
   <div class="game-cards">
     <% @games.each do |game| %>
-      <%= render partial: 'game_card', locals: { game: game, favoriting: @favoriting, ownership: @ownership } %>
+      <%= render partial: 'game_card', locals: { game: game, favoriting: @favoriting, ownership: @ownership, bigbuttons: false } %>
     <% end %>
   </div>
 <% end %>

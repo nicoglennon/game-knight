@@ -34,8 +34,8 @@ header {
   background-color: #26a69a;
 }
 
-nav {
-  background-color: #26a69a;
+#navigation-bar {
+  background-color: rgba(51,51,51,0.08);
 }
 
 .form {
@@ -82,7 +82,8 @@ nav {
 
 #main-title {
   margin: 0;
-  padding: 70px 40px 5px 30px;
+  padding: 70px 40px 30px 30px;
+  text-shadow: 1px 2px #007a6b;
 }
 
 #main-link {
@@ -122,13 +123,89 @@ footer.page-footer {
   background-color: #26a69a;
 }
 
-.profile-links {
-  font-size: 1.3em !important;
-  color: #26a69a !important;
+
+.tabs .tab .profile-links {
+  font-size: 1.3em;
+  color: #26a69a;
+}
+
+.tabs .tab .profile-links:hover {
+  color: #02e3b0;
+}
+
+.tabs .tab .profile-links.active {
+  color: #02e3b0;
 }
 
 .write-review {
   text-align: center;
   margin: auto;
   max-width: 80%;
+}
+
+.indicator {
+  background-color: #02e3b0 !important;
+}
+
+.no-games {
+  color: white;
+  padding: 1%;
+  background-color: #F08080;
+}
+
+.no-decoration {
+  color: white;
+  text-decoration: underline;
+}
+
+.card-image {
+  overflow: hidden;
+  position: relative;
+  height: 200px;
+}
+
+.big-image {
+  height: 600px;
+}
+
+.card-image img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+i.material-icons {
+  z-index: 10000;
+}
+
+.card-content {
+  position: relative;
+}
+
+button.halfway-fab {
+  top: -20px;
+}
+
+div.card-div {
+  vertical-align: top;
+}
+
+.profile-picture {
+  height: 300px;
+}
+
+.bio-title {
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.padding-left {
+  padding: 0px 20px;
+}
+
+.search-span {
+  color: #26a69a;
 }

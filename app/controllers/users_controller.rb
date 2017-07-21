@@ -13,6 +13,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update_attributes(user_edit_params)
+    redirect_to user_path(@user)
+  end
+
   def show
     @user = User.find(params[:id])
     @favoriting = Favoriting.new
@@ -24,5 +34,9 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
+
+  def user_edit_params
+    params.require(:user).permit(:username, :bio)
   end
 end
