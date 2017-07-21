@@ -21,9 +21,9 @@ class User < ApplicationRecord
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/]
 
-  # def avatar_remote_url=(url_value)
-  #   self.avatar = URI.parse(url_value)
-  #   @avatar_remote_url = url_value
-  # end
+  def avatar_remote_url=(url_value)
+    self.avatar = URI.parse(url_value)
+    @avatar_remote_url = url_value
+  end
 
 end
