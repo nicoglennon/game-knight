@@ -34,8 +34,8 @@ header {
   background-color: #26a69a;
 }
 
-nav {
-  background-color: #26a69a;
+#navigation-bar {
+  background-color: rgba(51,51,51,0.08);
 }
 
 .form {
@@ -82,7 +82,8 @@ nav {
 
 #main-title {
   margin: 0;
-  padding: 70px 40px 5px 30px;
+  padding: 70px 40px 30px 30px;
+  text-shadow: 1px 2px #007a6b;
 }
 
 #main-link {
@@ -131,4 +132,7 @@ footer.page-footer {
   text-align: center;
   margin: auto;
   max-width: 80%;
+}
+.indicator {
+  background-color: #02e3b0 !important;
 }
