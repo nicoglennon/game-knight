@@ -8,7 +8,7 @@
 <% else %>
   <div class="game-cards">
     <% @games.each do |game| %>
-      <%= render partial: 'game_card', locals: { game: game, favoriting: @favoriting, ownership: @ownership } %>
+      <%= render partial: 'game_card', locals: { game: game, favoriting: @favoriting, ownership: @ownership, bigbuttons: false } %>
     <% end %>
   </div>
 <% end %>

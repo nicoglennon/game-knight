@@ -164,6 +164,10 @@ footer.page-footer {
   height: 200px;
 }
 
+.big-image {
+  height: 600px;
+}
+
 .card-image img {
   width: 100%;
   position: absolute;
@@ -187,5 +191,13 @@ button.halfway-fab {
 
 div.card-div {
   vertical-align: top;
-  ;
+}
+
+.profile-picture {
+  height: 300px;
+}
+
+.bio-title {
+  font-size: 30px;
+  font-weight: bolder;
 }
