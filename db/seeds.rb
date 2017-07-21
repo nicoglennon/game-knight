@@ -104,7 +104,7 @@ def seed_desc_mechs_cats_designers
 
     current_game = Game.find_by(bgg_id: game_id)
     # description
-    current_game[:description] = info_hash["description"].gsub(/&#10;/,"<br>")
+    current_game[:description] = info_hash["description"].gsub(/&#10;/,"\n")
     # mechs
     info_hash["mechanics"].each do |mechanic|
       current_game.mechanisms << Mechanism.find_or_create_by(name: mechanic)
