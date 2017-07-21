@@ -5,6 +5,7 @@
     <script src="https://use.fontawesome.com/fc6aeb68c1.js"></script>
     <%= csrf_meta_tags %>
 
+    <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Philosopher" %>
     <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.0/css/materialize.min.css' %>
     <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -16,12 +17,13 @@
 
   <body>
     <header>
-      <h1 id="main-title">Game Knight</h1>
+      <h1 id="main-title"><%= link_to "Game Knight", root_path, id: "main-link" %></h1>
       <%= render partial: 'layouts/navbar' %>
     </header>
 
     <main id="main-content">
     <%= yield %>
     </main>
+    <%= render partial: 'layouts/footer' %>
   </body>
 </html>

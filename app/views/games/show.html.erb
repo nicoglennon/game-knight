@@ -15,6 +15,7 @@
               <p class="game-description flow-text"><%= @game.description %></p>
               <br>
               <hr>
+              <br>
               <p class="game-details flow-text">Released in <%= @game.release_date %>, designed by <%= @game.designer %></p>
             </div>
           </div>
@@ -36,12 +37,13 @@
   <% if @game.reviews.any? %>
     <div class="reviews card">
     <h4 class="card-title-custom"><%= @game.reviews.count %> Reviews</h5>
+    <hr>
       <%= render @game.reviews %>
     </div>
   <% end %>
   
   <% if logged_in? %>
-    <div class="reviews card">
+    <div class="write-review reviews card">
       <h4 class="card-title-custom">Write a Review</h4>
       <%= render partial: 'reviews/form', locals: {game: @game} %>
     </div>

@@ -15,6 +15,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @favoriting = Favoriting.new
+    @ownership = Ownership.new
     redirect_to '/login' if @user != current_user
   end
 

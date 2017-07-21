@@ -2,7 +2,9 @@
   <h2 class="page-title">Games</h2> 
 </div>
 <% if @games.blank? %>
-  <p>There are no games containing the term '<%= params[:search] %>'.</p>
+<div class="card title-card">
+  <p>Sorry! There are no games containing the term '<%= params[:search] %>'.</p>
+</div>
 <% else %>
   <div class="game-cards">
     <% @games.each do |game| %>

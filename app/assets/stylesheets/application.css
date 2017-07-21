@@ -14,6 +14,10 @@
  *= require_self
  */
 
+html {
+  font-family: 'Philosopher', GillSans;
+  font-size: 1.1em;
+}
 main {
   padding: 1% 2%;
   margin: auto;
@@ -35,7 +39,7 @@ nav {
 }
 
 .form {
-  margin: auto;
+  margin: 2% auto;
   text-align: center;
   max-width: 500px;
   padding: 1% 5%;
@@ -47,8 +51,9 @@ nav {
   margin: 1%;
 }
 .game-cards {
+  vertical-align: text-top;
   margin: auto;
-  text-align: center;
+  /*text-align: cen;*/
 }
 .page-title {
   margin-left: 3%;
@@ -76,9 +81,13 @@ nav {
 }
 
 #main-title {
-  color: white;
   margin: 0;
   padding: 70px 40px 5px 30px;
+}
+
+#main-link {
+  text-decoration: none;
+  color: white;
 }
 
 .title-card {
@@ -107,4 +116,19 @@ input.input-sizing {
 
 .game-details, #game-title {
   font-weight: bolder;
+}
+
+footer.page-footer {
+  background-color: #26a69a;
+}
+
+.profile-links {
+  font-size: 1.3em !important;
+  color: #26a69a !important;
+}
+
+.write-review {
+  text-align: center;
+  margin: auto;
+  max-width: 80%;
 }
