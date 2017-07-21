@@ -1,7 +1,7 @@
 <!-- THIS IS A FORM TO CREATE A REVIEW -->
 
 <div class="form">
-  <%= form_for @review do |f|  %>
+  <%= form_for @review, url: game_reviews_path(game.id) do |f|  %>
     <p>
       <%= f.label "Title" %><br>
       <%= f.text_field :title %>
@@ -10,7 +10,7 @@
       <%= f.label "Your Review" %><br>
       <%= f.text_area :body %>
     </p>
-      <%= f.hidden_field :author_id, value: current_user.id %> <!-- double-check that this works -->
+      <%= f.hidden_field :author_id, value: current_user.id %>
       <%= f.hidden_field :game_id, value: game.id %> <!-- passed in as local variable -->
     <p>
       <%= f.submit "Create" %>
