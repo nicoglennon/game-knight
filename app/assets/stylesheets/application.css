@@ -210,4 +210,7 @@ div.card-div {
   color: #26a69a;
 }
 
-
+#counts {
+  background-color: black;
+  border-radius: 20px;
+}

@@ -74,7 +74,7 @@ def seed_real_games(profile)
   game_params_array = []
   collection_array.each do |game|
     game_args = {}
-    game_args[:title] = game["name"]
+    game_args[:title] = game["name"].to_s
     game_args[:number_of_players] = player_range(game)
     game_args[:duration] = game["playingTime"]
     game_args[:release_date] = game["yearPublished"].to_s
