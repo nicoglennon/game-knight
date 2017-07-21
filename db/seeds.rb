@@ -5,13 +5,24 @@ require 'json'
 
 # Method to seed fake data for app testing
 def seed_user_data
+  admin = User.new(username: "admin", email: "admin@admin.com", admin: true)
+  admin.password = "admin"
+  admin.save
+
   tom = User.new(username: "tomtom", email: "tom@tom.com")
   tom.password = "tomtom"
   tom.save
 
-  tim = User.new(username: "timtim", email: "tim@tim.com")
-  tim.password = "timtim"
+  tim = User.new(username: "timtom", email: "tim@tom.com")
+  tim.password = "timtom"
   tim.save
+
+  20.times do
+    new_user = User.new(username: Faker::Internet.user_name)
+    new_user.email = Faker::Internet.safe_email(new_user.username)
+    new_user.password = "password"
+    new_user.save
+  end
 end
 
 def seed_test_game_data
@@ -45,7 +56,7 @@ def seed_test_game_data
 end
 
 def seed_review_data
-  15.times do
+  20.times do
     Review.create(
       title: Faker::MostInterestingManInTheWorld.quote,
       body: Faker::Hacker.say_something_smart + " " + Faker::ChuckNorris.fact,
