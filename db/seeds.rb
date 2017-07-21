@@ -158,7 +158,25 @@ def seed_10_games
 end
 
 def seed_forum_data
-  # Seeding of forum data goes here
+  Forum.create(
+    name: "Two-Player Games",
+    description: "Let's talk two players!"
+    )
+
+  Forum.create(
+    name: "Family Games",
+    description: "Fun for the kids!"
+    )
+
+  Forum.create(
+    name: "News",
+    description: "What's new in the world of board games?"
+    )
+
+  Forum.create(
+    name: "NSFW",
+    description: "Content appropriate for mature audiences."
+    )
 end
 
 #************************************
@@ -166,7 +184,7 @@ end
  seed_10_games
 # seed_200_games
 
-# seed_forum_data
+seed_forum_data
 
 # seed_test_game_data
 #************************************

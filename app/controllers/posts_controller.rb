@@ -1,10 +1,12 @@
 class PostsController < ApplicationController
  def new
     @post = Post.new
+    @topic = Topic.find(params[:topic_id])
   end
 
   def create
-    @post = Post.new(params[:post])
+    @topic = Topic.find(params[:topic_id])
+    @post = Post.new(post_params)
     if @post.save
       redirect_to "/forums/#{@post.topic.forum_id}/topics/#{@post.topic_id}"
     else
@@ -19,7 +21,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:id])
-    @post.update_attributes(params[:post])
+    @post.update_attributes(post_params)
     if @post.valid?
       redirect_to "/forums/#{@post.topic.forum_id}/topics/#{@post.topic_id}"
     else
@@ -32,5 +34,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy!
     redirect_to "/forums/#{@post.topic.forum_id}/topics/#{@post.topic_id}"
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:content, :user_id, :topic_id)
   end
 end

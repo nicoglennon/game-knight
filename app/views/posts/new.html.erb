@@ -1,10 +1,12 @@
+<h2>New Post</h2>
 <div class="form">
-  <%= form_for @post, url: forum_topic_posts_path(forum.id, topic.id), class: "center" do |f|  %>
+  <%= form_for @post, url: "/forums/#{params[:forum_id]}/topics/#{params[:topic_id]}/posts", class: "center" do |f|  %>
     <div class="input-field">
       <%= f.label "Your Post" %><br>
       <%= f.text_area :content, class: "materialize-textarea" %>
     </div>
       <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.hidden_field :topic_id, value: @topic.id %>
     <p class="submit-p">
       <%= f.submit "Post", class: "waves-effect waves-light btn center" %>
     </p>

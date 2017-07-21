@@ -5,5 +5,11 @@
       <% end %>
     <p class="description"><%= @topic.description %></p>
 
+    <% if @topic.user_id == current_user.id %>
+    <%= link_to "Delete Topic", forum_topic_path(@topic.forum, @topic), method: :delete %>
+  <% end %>
+
 
 <%= render @topic.posts %>
+<%= link_to "New Post", new_forum_topic_post_path(@topic.forum, @topic), class: "ctr waves-effect waves-light btn" %>
+

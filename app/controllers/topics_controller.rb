@@ -1,15 +1,17 @@
 class TopicsController < ApplicationController
 
   def show
-    @topic = Topic.find(params[:id])
+    @topic = Topic.find(params[:topic_id])
   end
 
   def new
+    @forum = Forum.find(params[:forum_id])
     @topic = Topic.new
   end
 
   def create
-    @topic = Topic.new(params[:topic])
+    @forum = Forum.find(params[:forum_id])
+    @topic = Topic.new(topic_params)
     if @topic.save
       redirect_to "/forums/#{@topic.forum_id}"
     else
@@ -24,7 +26,7 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.find(params[:id])
-    @topic.update_attributes(params[:topic])
+    @topic.update_attributes(topic_params)
     if @topic.valid?
       redirect_to "/forums/#{@topic.forum_id}"
     else
@@ -37,5 +39,10 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @topic.destroy!
     redirect_to "/forums/#{@topic.forum_id}"
+  end
+
+  private
+  def topic_params
+    params.require(:topic).permit(:title, :description, :user_id, :forum_id)
   end
 end
