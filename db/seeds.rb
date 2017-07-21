@@ -2,6 +2,8 @@ require 'faker'
 require 'date'
 require 'net/http'
 require 'json'
+require 'nokogiri'
+require 'active_support/core_ext/hash'
 
 # Method to seed fake data for app testing
 def seed_user_data
@@ -105,7 +107,7 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
   end
 end
 
-def seed_desc_mechs_designers
+def seed_desc_mechs_cats_designers
   games = Game.all
   game_ids = []
   games.each do |game|
@@ -126,13 +128,21 @@ def seed_desc_mechs_designers
     # designer
     current_game[:designer] = info_hash["designers"][0]
 
+    # categories
+    uri = URI("https://boardgamegeek.com/xmlapi2/thing?id=#{game_id}")
+    doc = Nokogiri::XML(Net::HTTP.get(uri))
+    game_info_hash = Hash.from_xml(doc.to_s)
+    links_array = game_info_hash["items"]["item"]["link"]
+
+    links_array.each do |link|
+      if link["type"] == "boardgamecategory"
+        current_game.categories << Category.find_or_create_by(name: link["value"]
+      end
+    end
+
     current_game.save
     sleep(5)
   end
-end
-
-def seed_categories
-
 end
 
 def player_range(game)
@@ -146,6 +156,5 @@ end
 # seed_test_game_data
  seed_real_games
  seed_review_data
-# seed_desc_mechs_designers
-# seed_categories
+ seed_desc_mechs_cats_designers
 #************************************
