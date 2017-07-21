@@ -19,10 +19,12 @@ class Game < ApplicationRecord
   #   self.where("title LIKE ? OR description LIKE ?", "%#{search.capitalize}%", "%#{search.capitalize}%")
   # end
 
-  def most_popular_games(games)
+  def self.popular
+    self.select("games.*, COUNT(fans.id) fan_count").joins(:favoritings).group('games.id').order("fan_count DESC")
 
   end
 
-  def best_selling_games(games)
+  def self.best_selling
+    self.where
   end
 end
