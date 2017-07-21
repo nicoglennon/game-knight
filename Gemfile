@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.2'
@@ -30,8 +33,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'faker'
 gem 'thredded', '~> 0.13.2' # creates forums
-gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
