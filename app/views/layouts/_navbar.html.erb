@@ -2,10 +2,12 @@
   <div class="nav-wrapper">
     <ul class="left hide-on-med-and-down navbar-links">
       <li><%= link_to 'Home', root_path %></li>
-      <li><%= link_to "Advanced Search", '/search', :class=> "button-big layer" %></li>
+      <li><%= link_to "Browse", games_path %></li>
+      <li><%= link_to "Advanced Search", '/search', class: "button-big layer" %></li>
     </ul>
     <ul class="right hide-on-med-and-down navbar-links">
       <% if session[:user_id] != nil %>
+        <li><%= link_to "Forums", '/forum' %></li>
         <li><%= link_to 'Log out', controller: 'sessions', action: 'destroy' %></li>
         <li><%= link_to "My Library", user_path(current_user) %></li>
       <% else %>
@@ -16,4 +18,4 @@
     </ul>
   </div>
 </nav>
-    <%= render partial: 'layouts/search' %>
+<%= render partial: 'layouts/search' %>
