@@ -14,6 +14,7 @@
 //= require_tree .
 
  $(document).ready(function(){
-      $('.carousel').carousel();
-    });
-        
+    listenForFavoriteClicks()
+    listenForAddClicks()
+  });
+

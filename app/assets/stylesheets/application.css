@@ -218,3 +218,10 @@ div.card-div {
 .card-action a {
   font-size: 0.7em!important;
 }
+
+.alert {
+  color: white;
+  padding: 1%;
+  background-color: #26a69a;
+  text-align:center;
+}

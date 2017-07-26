@@ -26,5 +26,6 @@ Rails.application.routes.draw do
   resources :ownerships, only: [:create, :destroy]
   resources :favoritings, only: [:create, :destroy]
 
-
+  post '/favoritings', to: 'favoritings#create'
+  post '/ownerships', to: 'ownerships#create'
 end

@@ -22,10 +22,10 @@
       <%= render partial: 'layouts/navbar' %>
     </header>
 
-        <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg%>
-        <% end %>
     <main id="main-content">
+      <% flash.each do |name, msg| %>
+        <%= render partial: 'layouts/flash', locals: {flash: msg} %>
+      <% end %>
     <%= yield %>
     </main>
     <%= render partial: 'layouts/footer' %>
