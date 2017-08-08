@@ -1,28 +1,33 @@
 <div class="form center card">
 <h2>Register</h2>
   <%= form_for(@user, multipart: true) do |f|  %>
+
+  <% if @errors %>
+    <%= render 'layouts/errors' %>
+  <% end %>
+
     <div class="row">
       <div class="input-field">
-        <%= f.text_field :username %>
         <%= f.label "Username" %>
+        <%= f.text_field :username, class: "input-sizing" %>
       </div>
     </div>
     <div class="row">
       <div class="input-field">
         <%= f.label "Email" %>
-        <%= f.email_field :email %>
+        <%= f.email_field :email, class: "input-sizing" %>
       </div>
     </div>
     <div class="row">
       <div class="input-field">
         <%= f.label "Password" %>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, class: "input-sizing" %>
       </div>
     </div>
     <div class="row">
       <div class="input-field">
         <%= f.label "Confirm Password" %>
-        <%= f.password_field :password_confirmation %>
+        <%= f.password_field :password_confirmation, class: "input-sizing" %>
       </div>
     </div>
     <div class="row">
