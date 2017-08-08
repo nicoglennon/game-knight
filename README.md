@@ -1,5 +1,7 @@
 # Game Knight
 
+Find Game Knight on Heroku [here](http://dbcgameknight.herokuapp.com/).
+
 ## OUR QUEST: BoardGameGeek, but Vastly Superior in Every Imaginable Way
 
 ### The Team
@@ -22,5 +24,3 @@ Main functionalities, or *epics* if you will, include:
 * A user can register/log in for additional features...
   * a profile page (library), which includes lists of owned and favorited games
   * access to write reviews of games and post in the forums
-
-**Check back soon for a link to our website!**
