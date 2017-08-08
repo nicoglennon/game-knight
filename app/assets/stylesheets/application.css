@@ -223,3 +223,12 @@ div.card-div {
   background-color: #26a69a;
   color: white;
 }
+
+.show-page-links {
+  font-size: 1.5em;
+}
+
+.game-description {
+  font-size: 1.2em;
+  font-weight: 100;
+}
