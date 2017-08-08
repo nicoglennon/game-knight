@@ -218,3 +218,8 @@ div.card-div {
 .card-action a {
   font-size: 0.7em!important;
 }
+
+.notification-card {
+  background-color: #26a69a;
+  color: white;
+}

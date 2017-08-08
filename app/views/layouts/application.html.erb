@@ -21,12 +21,15 @@
       <h1 id="main-title"><%= link_to "♞ Game Knight", root_path, id: "main-link" %></h1>
       <%= render partial: 'layouts/navbar' %>
     </header>
-
-        <% flash.each do |name, msg| %>
-          <%= content_tag :div, msg%>
-        <% end %>
     <main id="main-content">
-    <%= yield %>
+      <!-- flash message -->
+      <% flash.each do |name, msg| %>
+        <div class="card title-card notification-card">
+          <p class="padding-left flow-text"><%= msg %></p>
+        </div>
+      <% end %>
+      <!-- rest of content -->
+      <%= yield %>
     </main>
     <%= render partial: 'layouts/footer' %>
   </body>
