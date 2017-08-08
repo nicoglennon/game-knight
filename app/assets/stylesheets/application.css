@@ -230,5 +230,9 @@ div.card-div {
 
 .game-description {
   font-size: 1.2em;
-  font-weight: 100;
+}
+
+.footer-p-text {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
