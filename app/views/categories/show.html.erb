@@ -1,8 +1,10 @@
+
 <div class='card title-card'>
-  <h1> Games in <%= @category.name %> </h1>
-  <div class='game-cards'>
-    <% @category.games.each do |game| %>
-      <%= render partial: 'games/game_card', locals: {game: game, favoriting: @favoriting, ownership: @ownership} %>
-      <% end %>
-  </div>
+  <h4> Category: <span class="search-span">'<%= @category.name %>'</span></h4>
+</div>
+
+<div class='game-cards'>
+  <% @category.games.each do |game| %>
+    <%= render partial: 'games/game_card', locals: {game: game, favoriting: @favoriting, ownership: @ownership} %>
+    <% end %>
 </div>

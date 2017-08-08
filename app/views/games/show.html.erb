@@ -1,6 +1,6 @@
 
 <div class="container">
-      <div class="row">
+      <div class="main-show-card">
         <div class="col">
           <div class="card">
             <div class="card-image big-image">
@@ -24,13 +24,23 @@
 
   <% if @game.categories.any? || @game.mechanisms.any? %>
     <div class="card body">
-      <ul class="categories-list">
-        <%= render @game.categories %>
-      </ul>
+      <% if @game.categories.any? %>
+        <h5>Categories</h5>
+        <div class="card-action show-page-links">
+          <% @game.categories.each do |category| %>
+           <%= link_to category.name, category_path(category) %>
+          <% end %>
+        </div>
+      <% end %>
 
-      <ul class="mechanisms-list">
-        <%= render @game.mechanisms %>
-      </ul>
+      <% if @game.mechanisms.any? %>
+        <h5>Mechanisms</h5>
+        <div class="card-action show-page-links">
+          <% @game.mechanisms.each do |mechanism| %>
+          <%= link_to mechanism.name, mechanism_path(mechanism) %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 
@@ -49,5 +59,3 @@
     </div>
   <% end %>
 </div>
-
-

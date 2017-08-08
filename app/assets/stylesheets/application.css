@@ -218,3 +218,21 @@ div.card-div {
 .card-action a {
   font-size: 0.7em!important;
 }
+
+.notification-card {
+  background-color: #26a69a;
+  color: white;
+}
+
+.show-page-links {
+  font-size: 1.5em;
+}
+
+.game-description {
+  font-size: 1.2em;
+}
+
+.footer-p-text {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}

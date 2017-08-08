@@ -1,3 +1,9 @@
-<h1>Games with <%= @mechanism.name %></h1>
+<div class='card title-card'>
+  <h4> Mechanism: <span class="search-span">'<%= @mechanism.name %>'</span></h4>
+</div>
 
-<%= @mechanism.games %>
+<div class='game-cards'>
+  <% @mechanism.games.each do |game| %>
+    <%= render partial: 'games/game_card', locals: {game: game, favoriting: @favoriting, ownership: @ownership} %>
+    <% end %>
+</div>
